@@ -14,12 +14,33 @@
 
 | ディレクトリ | 役割 |
 |-------------|------|
-| `templates/` | 記事テンプレート・レビューチェックリスト・タグ体系 |
+| `articles/drafts/` | 記事ドラフト（ブランチで作業→PRでレビュー） |
 | `published/` | 公開済み記事アーカイブ + `content-registry.json`（メタデータ管理） |
+| `meeting-notes/` | Google Meet議事録・朝会素材の集約先 |
+| `templates/` | 記事テンプレート・レビューチェックリスト・タグ体系 |
 | `assets/` | サムネイル画像等 |
 | `materials/team-strategy/` | チーム方針資料（pptx等） |
 | `materials/morning-sessions/` | 朝会発表資料（pptx等） |
 | `research/` | リサーチレポート（SEO/GEO・相互リンク・ベストプラクティス） |
+
+---
+
+## 週次運用フロー
+
+### 役割
+
+| 役割 | 担当 |
+|------|------|
+| **発表者** | その週の朝会発表担当（輪番） |
+| **編集長** | 馬場。記事チェック・公開判断・全体管理 |
+
+### タイムライン
+
+1. **月曜（朝会）**: 発表→議論。Google Meet 録画ON・議事録自動生成
+2. **火曜**: 馬場が Meet議事録 → **GitHub Issue** に素材集約（テンプレート: `.github/ISSUE_TEMPLATE/article-issue.yml`）
+3. **火〜水**: 発表者がドラフト執筆（Claude Code skills支援）→ `articles/drafts/` にcommit
+4. **木曜**: 発表者が **PR** 作成 → 馬場がレビュー（機密+品質チェック、テンプレート: `.github/pull_request_template.md`）
+5. **金曜**: PR Merge → noteに公開 → チームSNS拡散
 
 ---
 
@@ -93,9 +114,14 @@
 
 ## Git運用
 
-- main直push（チーム共有ドキュメントリポジトリ）
+### 記事制作（PRベース）
+- 記事ドラフトはブランチで作業 → PR → 馬場がレビュー → Approve = 公開GO
+- PR Merge 後、`published/` に記事を移動 + `content-registry.json` を更新
+- PRテンプレートに機密チェック + 品質チェックリストを組み込み済み
+
+### テンプレート・設定変更
+- main直push可（`templates/`, `research/`, `.claude/` 等の変更）
 - コミットメッセージ: `docs: {変更内容の要約}` 形式
-- 記事原稿・テンプレート・レジストリ更新が主な変更対象
 
 ---
 
