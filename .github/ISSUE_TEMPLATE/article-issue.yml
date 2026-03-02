@@ -1,0 +1,69 @@
+name: 記事起票（朝会素材集約）
+description: 朝会の発表・議論をもとに記事素材を集約する
+title: "【BizDev朝会 #】"
+labels: ["article"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        朝会の発表内容と議論を集約し、記事化の素材とします。
+  - type: input
+    id: date
+    attributes:
+      label: 朝会日付
+      placeholder: "2026-03-03"
+    validations:
+      required: true
+  - type: input
+    id: presenter
+    attributes:
+      label: 発表者
+      placeholder: "@username"
+    validations:
+      required: true
+  - type: input
+    id: meet-recording
+    attributes:
+      label: Meet録画リンク
+      placeholder: "https://drive.google.com/..."
+  - type: input
+    id: meet-transcript
+    attributes:
+      label: Meet議事録リンク
+      placeholder: "https://docs.google.com/..."
+  - type: textarea
+    id: summary
+    attributes:
+      label: 発表の要旨
+      description: 馬場が議事録から抽出・要約
+      placeholder: |
+        - 主張1:
+        - 主張2:
+        - 分析・データ:
+    validations:
+      required: true
+  - type: textarea
+    id: discussion-points
+    attributes:
+      label: 議論で出た論点
+      description: チームから出た質問・反論・追加視点
+      placeholder: |
+        - 論点1:
+        - 論点2:
+        - 反論・別視点:
+    validations:
+      required: true
+  - type: textarea
+    id: open-questions
+    attributes:
+      label: 結論が出なかった問い
+      description: 記事の「読者への投げかけ」候補
+      placeholder: |
+        -
+  - type: textarea
+    id: references
+    attributes:
+      label: 参考資料
+      description: 発表スライド、参考記事、データソース等
+      placeholder: |
+        - [資料名](URL)
