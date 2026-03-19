@@ -1,14 +1,14 @@
 # 関連リンク提案（Cross-Linker）
 
 note記事ドラフトに対して、関連記事のリンク挿入候補を提案する。
-link-registry.md の関係者記事 + note.com内の外部記事から最適なリンクを選定。
+link-registry.md の関係者記事 + 自チーム過去記事 + note.com内の外部記事から最適なリンクを選定。
 
 エージェント定義: `.claude/agents/cross-linker.md`
 
 ## 引数
 
 $ARGUMENTS — 記事ドラフトのファイルパス
-- 省略時: `output/bizdev-note-project/articles/` 配下の最新記事ドラフトを対象にする
+- 省略時: `articles/drafts/` 配下の最新記事ドラフトを対象にする
 
 オプション:
 - `no-external` — WebSearchによる外部記事探索をスキップ（レジストリ内のみで提案）
@@ -21,12 +21,10 @@ $ARGUMENTS — 記事ドラフトのファイルパス
 
 1. `$ARGUMENTS` を解析:
    - ファイルパス指定あり → そのファイルを読み込み
-   - 省略 → `output/bizdev-note-project/articles/` 配下の最新 `article_draft.md` を探索
+   - 省略 → `articles/drafts/` 配下の最新ドラフトを探索
    - ファイルが見つからない場合 → ユーザーにパスの指定を依頼して終了
-2. `output/bizdev-note-project/link-registry.md` を読み込み
-   - 関係者アカウント一覧
-   - 記事リスト
-   - リンク挿入ガイドライン
+2. `research/link-registry.md` を読み込み（関係者記事リスト）
+3. `published/content-registry.json` を読み込み（自チーム過去記事メタデータ）
 
 ### Step 2: ドラフト分析
 
@@ -36,15 +34,25 @@ $ARGUMENTS — 記事ドラフトのファイルパス
    - セクションの主張（1文要約）
 3. 既存の `[LINK: ...]` プレースホルダーの位置を記録
 
-### Step 3: レジストリ記事マッチング
+### Step 3: 自チーム過去記事マッチング
 
-link-registry.md の全記事に対して、ドラフト各セクションとの関連度を評価:
+content-registry.json の全記事に対して、ドラフト各セクションとの関連度を評価:
+
+- `keyTopics` の重複
+- `keyQuestions` との接続（前回の問い→今回の回答）
+- カテゴリ・タグの一致
+
+→ 本文中挿入候補 + 末尾関連記事候補を生成
+
+### Step 4: 関係者記事マッチング
+
+research/link-registry.md の全記事に対して、ドラフト各セクションとの関連度を評価:
 
 - **高関連**（同テーマ別角度 / 引用根拠に使える）→ インライン引用候補
 - **中関連**（テーマが近い / 次に読みたくなる）→ 末尾「関連記事」候補
 - **対象外**（採用エントリ / 2年以上前 / テーマ不一致）→ スキップ
 
-### Step 4: 外部記事探索（`no-external` 未指定時）
+### Step 5: 外部記事探索（`no-external` 未指定時）
 
 WebSearch で note.com 内の関連記事を探索:
 - ドラフトの主要KW 2-3個で `site:note.com {KW}` 検索
@@ -52,9 +60,12 @@ WebSearch で note.com 内の関連記事を探索:
 - 有力な候補を最大2本追加
 - **レジストリ未登録の有力記事があれば、追加提案も生成**
 
-### Step 5: 提案生成
+### Step 6: 提案生成
 
 以下をユーザーに提示:
+
+#### 自チーム過去記事リンク（最優先）
+連載内の相互リンク。前後の記事への言及、テーマの発展関係。
 
 #### インライン引用候補（最大3箇所）
 各候補について:
@@ -68,17 +79,22 @@ WebSearch で note.com 内の関連記事を探索:
 - 記事タイトル + URL + 著者名
 - 理由（1文）
 
+#### 逆方向リンク提案
+過去記事のどこに新記事へのリンクを追記すべきか。
+
 #### レジストリ追加提案（該当時のみ）
 外部探索で見つけた未登録記事:
 - 記事タイトル + URL + 著者/アカウント
 - テーマ + 追加理由
 
-### Step 6: 反映（ユーザー承認後）
+### Step 7: 反映（ユーザー承認後）
 
 ユーザーが採用した提案のみ、ドラフトに反映:
 - インライン引用 → 本文の該当箇所にリンクを挿入
 - 末尾関連記事 → 記事末尾に「関連記事」セクションを追加
-- レジストリ追加 → `link-registry.md` に新規エントリを追記
+- 逆方向リンク → 過去記事の末尾にリンクを追記
+- レジストリ追加 → `research/link-registry.md` に新規エントリを追記
+- content-registry.json → `linkedFrom` / `linkedTo` を更新
 
 ---
 
@@ -88,6 +104,7 @@ WebSearch で note.com 内の関連記事を探索:
 |--------|------|
 | ドラフトパスが見つからない | ユーザーにファイルパスの確認を依頼 |
 | link-registry.md が存在しない | 警告を出し、外部探索のみで提案を生成 |
+| content-registry.json が空 | 自チーム記事リンクをスキップし、関係者+外部のみで提案 |
 | レジストリの記事が少ない（3本未満） | 外部探索を自動で有効化し、レジストリ追加提案を優先的に生成 |
 | 関連記事が見つからない | 「現在のドラフトに適切な関連記事はありません」と報告 |
 
@@ -95,6 +112,7 @@ WebSearch で note.com 内の関連記事を探索:
 
 ## 関連
 
-- リンクレジストリ: `output/bizdev-note-project/link-registry.md`
-- note記事制作: `.claude/commands/note-article.md`（Phase 3完了後に自動呼び出し）
+- リンクレジストリ: `research/link-registry.md`
+- コンテンツレジストリ: `published/content-registry.json`
+- note記事制作: `.claude/commands/note-article.md`（Phase 4で自動呼び出し）
 - エージェント定義: `.claude/agents/cross-linker.md`
