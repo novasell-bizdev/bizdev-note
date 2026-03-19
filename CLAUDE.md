@@ -38,7 +38,7 @@
 
 1. **月曜（朝会）**: 発表→議論。Google Meet 録画ON・議事録自動生成
 2. **火曜**: 馬場が Meet議事録 → **GitHub Issue** に素材集約（テンプレート: `.github/ISSUE_TEMPLATE/article-issue.yml`）
-3. **火〜水**: 発表者がドラフト執筆（Claude Code skills支援）→ `articles/drafts/` にcommit
+3. **火～水**: 発表者がドラフト執筆（Claude Code skills支援）→ `articles/drafts/` にcommit
 4. **木曜**: 発表者が **PR** 作成 → 馬場がレビュー（機密+品質チェック、テンプレート: `.github/pull_request_template.md`）
 5. **金曜**: PR Merge → noteに公開 → チームSNS拡散
 
@@ -51,8 +51,9 @@
 | `/note-article` | skill | 「note記事書いて」「朝会記事化」 | 朝会素材→note記事の一気通貫オーケストレーター |
 | `/title-optimizer` | skill | 「タイトル最適化」 | SEO/note検索を意識したタイトル案6パターン生成 |
 | `/thumbnail-gen` | skill | 「サムネ作って」 | サムネイル用プロンプト/デザイン指示3パターン生成 |
-| `article-review` | subagent | note-articleから呼び出し | 5軸品質チェック + 機密判定 |
+| `article-review` | subagent | note-articleから呼び出し | 6軸品質チェック + 機密判定 |
 | `cross-linker` | subagent | note-articleから呼び出し | 過去記事との関連リンク提案 |
+| `/note-image-gen` | skill | 「記事の画像作って」「note画像」 | 記事内インフォグラフィック画像の設計・生成 |
 
 ---
 
@@ -88,7 +89,7 @@
 ### 基本
 - **一人称**: 「私たち」（チームの公開日誌として）
 - **文体**: 「です・ます」ベース。堅すぎず柔らかすぎない
-- **文字数**: 1,500〜2,000字（note最適レンジ）
+- **文字数**: 1,500～2,000字（note最適レンジ）
 - **シリーズ命名**: 【BizDev朝会 #N】サブタイトル
 
 ### GEO最適化構造（AI検索対応）
@@ -99,7 +100,7 @@
 - **FAQ形式**: Q&A構造はAI抽出に強い
 
 ### タイトル制約
-- 30〜35文字
+- 30～35文字
 - キーワードは前半（左側）に配置
 - フォーマット: 【BizDev朝会 #N】サブタイトル
 
@@ -108,7 +109,7 @@
 - シリーズロゴ「BizDev朝会」+ 連番 #N
 
 ### 推奨投稿時間
-- 水〜木曜日 12:00 or 20:00〜21:00
+- 水～木曜日 12:00 or 20:00～21:00
 
 ---
 
