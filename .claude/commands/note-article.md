@@ -1,11 +1,11 @@
 # note記事作成
 
-朝会の発表+議論からnote記事ドラフトを一気通貫で生成するオーケストレータースキル。
+公開日誌の発表+議論からnote記事ドラフトを一気通貫で生成するオーケストレータースキル。
 
 チーム定義: `.claude/agents/note-article-team.md`
 
 ## 引数
-$ARGUMENTS — 朝会テーマ or 資料ファイルパス。省略時は `materials/morning-sessions/` の最新資料を使用
+$ARGUMENTS — 公開日誌テーマ or 資料ファイルパス。省略時は `materials/morning-sessions/` の最新資料を使用
 
 オプション:
 - `draft-only` — Phase 3（執筆）まで。販促素材は生成しない
@@ -127,7 +127,7 @@ $ARGUMENTS — 朝会テーマ or 資料ファイルパス。省略時は `mater
 **禁止事項**:
 - 戦略方針・顧客情報・財務数値の記載
 - 社内事例の具体社名・具体数値（抽象化する）
-- 「朝会」への言及（シリーズ名は「BizDev 公開日誌」）
+- 「朝会」「ミーティング」等の内部用語への言及（シリーズ名は「BizDev 公開日誌」）
 
 `draft-only` 指定時はここで完了。Phase 6 に進む。
 
