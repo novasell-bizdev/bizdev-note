@@ -59,7 +59,28 @@
       "暗黙知の切り出しを拒否する組織は淘汰されるのか、別の道があるのか"
     ],
     "keyTopics": ["暗黙知の切り出し", "業務プロセスがプロダクト", "適応速度", "属人性の見極め", "少数精鋭×AI", "強いジェネラリスト"],
-    "linkedFrom": [],
+    "linkedFrom": [5],
     "linkedTo": [1, 2]
+  },
+  {
+    "id": 5,
+    "slug": "bizdev-tech-team",
+    "title": "AI時代にBizDevとTechが連携するほうが良い理由",
+    "seriesNumber": 5,
+    "date": "2026-04-13",
+    "author": "Ikumi Baba",
+    "category": "組織・人材論",
+    "tags": ["#AIBizDev", "#ノバセルBizDev", "#AI事業開発", "#BizDev組織論", "#エージェントハーネス"],
+    "noteUrl": "",
+    "file": "articles/drafts/05_bizdev-tech-team.md",
+    "summary": "AI時代にBizDevとTechがチームを組む理由を、思考様式・スキル・業務の3観点で整理。エージェントハーネスやManaged Agentsの概念を補助線に、規模が大きくなるほどBiz×Techの協業が不可欠になることを論じる。チーム内の具体的な議論も収録。",
+    "keyQuestions": [
+      "チームの最適人数は何人か？BizとTech最低1人ずつで回せるのか",
+      "『溶ける人材』が増えたとき、チームの意味は変わるか",
+      "ハーネス設計自体をAIが担うようになったとき、人間に残るのは何か"
+    ],
+    "keyTopics": ["BizとTechの棲み分け", "エージェントハーネス", "Managed Agents", "対話型vs委託型", "規模とバランス", "溶ける人材"],
+    "linkedFrom": [],
+    "linkedTo": [3]
   }
 ]
