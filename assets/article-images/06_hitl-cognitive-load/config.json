@@ -1,0 +1,19 @@
+{
+  "images": [
+    {
+      "output_path": "assets/article-images/06_hitl-cognitive-load/img_01_gap.png",
+      "aspect_ratio": "16:9",
+      "prompt": "Create a clean infographic-style illustration for a business article. 16:9 aspect ratio (1280x720px).\n\nTopic: AI生成のスピードは加速し続けるが、人間の検証は追いついていない。両者の間に開く大きなギャップこそが現場のボトルネック。\n\nVisual concept: 横並びの2つの上昇矢印を中央に配置。左の矢印は急角度で右上へ伸び、ラベル「生成 / Generation」、線の色は明るい緑 #2A8762、ストロークは太め。右の矢印は緩やかな角度でほぼ水平に伸び、ラベル「検証 / Verification」、線の色は薄いグレー #A0A0A0。2本の矢印の間に開く三角形のギャップを、警告色のアンバー #D97706 半透明（透過70%）で塗りつぶし、その中央に小さく「ボトルネック / Bottleneck」のラベル。\n\nKey text elements (Japanese): 「生成」「検証」「ボトルネック」\n\nStyle: Clean minimal infographic on warm off-white #EDEAE3 paper-textured background. Flat design with subtle gradients. Editorial magazine quality. Wide negative space at top and bottom. No people, no stock photos, no generic clip art, no device frames. Fill the entire canvas with the off-white background—no white margins."
+    },
+    {
+      "output_path": "assets/article-images/06_hitl-cognitive-load/img_02_5axes.png",
+      "aspect_ratio": "16:9",
+      "prompt": "Create a clean infographic-style illustration for a business article. 16:9 aspect ratio (1280x720px).\n\nTopic: HITL（Human-in-the-Loop）の本質は「認知負荷の配分設計」。それを構成する5つの軸を放射状に提示する。\n\nVisual concept: 中央に大きな円形ノード、内部に「HITL」と表記（フォントは細めのサンセリフ、色 #2B2B2B）。中央ノードから放射状に5本の細い線が伸び、それぞれの先端に小さな円形ノード。各ノードには順に Japanese ラベル「①量 / Volume」「②順番 / Order」「③担い手 / Owner」「④成果接続 / Outcome」「⑤見え方 / Framing」を配置。中央ノードはグリーン #2A8762 のアウトライン、外側ノードはアンバー #D97706 のアウトライン。線は薄い濃灰 #5A5A5A の細線。\n\nKey text elements (Japanese): 中央「HITL」、外側「①量」「②順番」「③担い手」「④成果接続」「⑤見え方」\n\nStyle: Clean minimal infographic on warm off-white #EDEAE3 paper-textured background. Flat design, editorial magazine quality, lots of negative space. No people, no stock photos. Fill the entire canvas."
+    },
+    {
+      "output_path": "assets/article-images/06_hitl-cognitive-load/img_03_intersection.png",
+      "aspect_ratio": "16:9",
+      "prompt": "Create a clean infographic-style Venn diagram for a business article. 16:9 aspect ratio (1280x720 pixels).\n\nTopic: A three-circle Venn diagram showing where to focus human judgment in HITL design.\n\nLayout:\n- Three large overlapping circles arranged in a triangle pattern (two on top, one at the bottom center).\n- Each circle has a thin outline stroke and translucent semi-transparent fill (about 25 percent opacity).\n- Top-left circle: warm amber color, with the Japanese label \"可逆性が低い\" placed above the circle in dark charcoal text.\n- Top-right circle: muted green color, with the Japanese label \"低頻度\" placed above the circle in dark charcoal text.\n- Bottom-center circle: dusty blue color, with the Japanese label \"成果距離が近い\" placed below the circle in dark charcoal text.\n- The central intersection where all three circles overlap is filled with a richer amber-brown color and contains ONLY the Japanese word \"人間\" centered in bold dark charcoal—no other text, no hex codes, no English subtitles.\n\nIMPORTANT TEXT RULES:\n- The ONLY visible text in the entire image must be these four Japanese labels: \"可逆性が低い\", \"低頻度\", \"成果距離が近い\", and \"人間\".\n- DO NOT render any color codes, hex values, RGB values, English color names, or design notes inside the image.\n- DO NOT add captions, legends, footnotes, or annotations.\n\nStyle: Clean minimal infographic on warm off-white paper-textured background. Flat design, editorial magazine quality, plenty of negative space. No people illustrations, no stock photos. Fill the entire canvas with the off-white background."
+    }
+  ]
+}
