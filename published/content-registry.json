@@ -92,7 +92,7 @@
     "author": "市岡大典",
     "category": "組織・人材論",
     "tags": ["#AIBizDev", "#ノバセルBizDev", "#AI事業開発", "#HumanInTheLoop", "#認知負荷"],
-    "noteUrl": "",
+    "noteUrl": "https://note.com/rapid_yeti215/n/nea675451624c",
     "file": "published/06_hitl-cognitive-load.md",
     "summary": "AIで「作る」スピードが上がる一方、「確認する」側が追いつかず認知負荷がボトルネックになっている問題を分析。HITLを「人間を挟む」ではなく「認知負荷の配分を設計すること」と捉え直し、5つの軸（量／順番／担い手／成果接続／見え方）と4つの設計原則（可逆性／頻度／成果距離／承認の粒度分解）を提示。",
     "keyQuestions": [
