@@ -7,7 +7,7 @@ note記事ドラフトの品質・機密チェックを実行する。6軸評価
 ## 引数
 
 $ARGUMENTS — 以下のいずれか:
-- 記事ドラフトのファイルパス（例: `articles/drafts/01_marketing-ax.md`）
+- 記事ドラフトのファイルパス（例: `articles/01_marketing-ax.md`）
 - 省略時: ユーザーにパスまたはテキスト貼り付けを依頼
 
 ## 実行手順

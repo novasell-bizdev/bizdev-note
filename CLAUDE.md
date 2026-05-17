@@ -14,8 +14,7 @@
 
 | ディレクトリ | 役割 |
 |-------------|------|
-| `articles/drafts/` | 記事ドラフト（ブランチで作業→PRでレビュー） |
-| `published/` | 公開済み記事アーカイブ + `content-registry.json`（メタデータ管理） |
+| `articles/` | 記事本文 + `content-registry.json`（メタデータ管理）。**mainマージ = 公開準備完了**。書きかけは feature ブランチで管理 |
 | `meeting-notes/` | Google Meet議事録・公開日誌素材の集約先 |
 | `templates/` | 記事テンプレート・レビューチェックリスト・タグ体系 |
 | `assets/` | サムネイル画像等 |
@@ -38,9 +37,9 @@
 
 1. **月曜（チーム議論）**: 発表→議論。Google Meet 録画ON・議事録自動生成
 2. **火曜**: 馬場が Meet議事録 → **GitHub Issue** に素材集約（テンプレート: `.github/ISSUE_TEMPLATE/article-issue.yml`）
-3. **火～水**: 発表者がドラフト執筆（Claude Code skills支援）→ `articles/drafts/` にcommit
+3. **火～水**: 発表者が feature ブランチ（`feature/article-NN-{slug}`）でドラフト執筆（Claude Code skills支援）→ `articles/NN_{slug}.md` にcommit
 4. **木曜**: 発表者が **PR** 作成 → 馬場がレビュー（機密+品質チェック、テンプレート: `.github/pull_request_template.md`）
-5. **金曜**: PR Merge → noteに公開 → チームSNS拡散
+5. **金曜**: PR Merge → noteに公開 → `content-registry.json` の `noteUrl` を更新 → チームSNS拡散
 
 ---
 
@@ -117,8 +116,9 @@
 ## Git運用
 
 ### 記事制作（PRベース）
-- 記事ドラフトはブランチで作業 → PR → 馬場がレビュー → Approve = 公開GO
-- PR Merge 後、`published/` に記事を移動 + `content-registry.json` を更新
+- 記事ドラフトは feature ブランチで作業 → PR → 馬場がレビュー → Approve = 公開GO
+- 物理的なディレクトリ分離（drafts/published）は廃止。**mainマージ = 公開準備完了**、`articles/content-registry.json` の `noteUrl` が空 = note未公開、URL付与 = note公開済み
+- PR Merge 後、note 公開→`articles/content-registry.json` の該当 entry に `noteUrl` を埋める
 - PRテンプレートに機密チェック + 品質チェックリストを組み込み済み
 
 ### テンプレート・設定変更
