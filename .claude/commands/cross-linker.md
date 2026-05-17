@@ -8,7 +8,7 @@ link-registry.md の関係者記事 + 自チーム過去記事 + note.com内の�
 ## 引数
 
 $ARGUMENTS — 記事ドラフトのファイルパス
-- 省略時: `articles/drafts/` 配下の最新記事ドラフトを対象にする
+- 省略時: `articles/` 配下の最新記事ドラフトを対象にする
 
 オプション:
 - `no-external` — WebSearchによる外部記事探索をスキップ（レジストリ内のみで提案）
@@ -21,10 +21,10 @@ $ARGUMENTS — 記事ドラフトのファイルパス
 
 1. `$ARGUMENTS` を解析:
    - ファイルパス指定あり → そのファイルを読み込み
-   - 省略 → `articles/drafts/` 配下の最新ドラフトを探索
+   - 省略 → `articles/` 配下の最新ドラフトを探索
    - ファイルが見つからない場合 → ユーザーにパスの指定を依頼して終了
 2. `research/link-registry.md` を読み込み（関係者記事リスト）
-3. `published/content-registry.json` を読み込み（自チーム過去記事メタデータ）
+3. `articles/content-registry.json` を読み込み（自チーム過去記事メタデータ）
 
 ### Step 2: ドラフト分析
 
@@ -113,6 +113,6 @@ WebSearch で note.com 内の関連記事を探索:
 ## 関連
 
 - リンクレジストリ: `research/link-registry.md`
-- コンテンツレジストリ: `published/content-registry.json`
+- コンテンツレジストリ: `articles/content-registry.json`
 - note記事制作: `.claude/commands/note-article.md`（Phase 4で自動呼び出し）
 - エージェント定義: `.claude/agents/cross-linker.md`

@@ -28,7 +28,7 @@ $ARGUMENTS — 記事テーマ、タイトル、またはドラフトのファ�
 ### 1. 入力解析
 
 - 記事テーマ・タイトル・カテゴリを特定
-- `published/content-registry.json` から次の #N を取得
+- `articles/content-registry.json` から次の #N を取得
 
 ### 2. 3パターンのデザイン指示を生成
 

@@ -43,7 +43,7 @@ $ARGUMENTS — 公開日誌テーマ or 資料ファイルパス。省略時は 
 
 **連載の記憶を呼び起こすステップ。** 過去記事との継続性・差別化を確保する。
 
-1. `published/content-registry.json` を読み込み:
+1. `articles/content-registry.json` を読み込み:
    - 既存記事のタイトル・テーマ・キー論点を把握
    - 前回記事の `keyQuestions`（未解決の問い）を抽出
    - 前回記事の `keyTopics` と今回テーマの重複・発展関係を整理
@@ -164,9 +164,9 @@ Phase 3 完了後、cross-linker エージェントを自動呼び出し:
 
 ### Phase 6: 保存 + 連載データ更新
 
-1. 記事原稿を `articles/drafts/{NN}_{slug}.md` に保存
+1. 記事原稿を `articles/{NN}_{slug}.md` に保存
 
-2. `published/content-registry.json` に新規エントリーを追加:
+2. `articles/content-registry.json` に新規エントリーを追加:
 
 ```json
 {
@@ -179,7 +179,7 @@ Phase 3 完了後、cross-linker エージェントを自動呼び出し:
   "category": "カテゴリ",
   "tags": ["#AIBizDev"],
   "noteUrl": "",
-  "file": "articles/drafts/{NN}_{slug}.md",
+  "file": "articles/{NN}_{slug}.md",
   "summary": "記事の要旨（2-3文）",
   "keyQuestions": ["この記事で提示した未解決の問い"],
   "keyTopics": ["主要トピック3-5個"],
@@ -226,5 +226,5 @@ Phase 3 完了後、cross-linker エージェントを自動呼び出し:
 
 - チーム定義: `.claude/agents/note-article-team.md`
 - 記事テンプレート: `templates/article-template.md`
-- 連載レジストリ: `published/content-registry.json`
+- 連載レジストリ: `articles/content-registry.json`
 - タグ体系: `templates/tag-taxonomy.md`

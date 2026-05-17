@@ -12,7 +12,7 @@ Hub&Spoke + Chain型のリンク設計パターンを適用する。
 
 ### Step 1: レジストリ読み込み
 
-1. `published/content-registry.json` を読み込み — 自チーム過去記事のメタデータ・要旨・キー論点
+1. `articles/content-registry.json` を読み込み — 自チーム過去記事のメタデータ・要旨・キー論点
 2. `research/link-registry.md` を読み込み — 関係者noteアカウント・記事リスト
 
 ### Step 2: マッチング

@@ -69,7 +69,7 @@ note-article スキルから呼び出される品質チェックサブエージ�
 
 ### Step 3: 連載整合性チェック
 
-`published/content-registry.json` を読み込み、以下を確認:
+`articles/content-registry.json` を読み込み、以下を確認:
 
 1. **トピック重複**: 過去記事の `keyTopics` と今回記事の主要トピックが80%以上重複していないか
 2. **問いの接続**: 前回記事の `keyQuestions` のうち、今回記事で触れるべきものが放置されていないか

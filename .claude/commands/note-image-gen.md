@@ -11,7 +11,7 @@ NanoBanana Pro（Gemini画像生成API）を使用。
 
 $ARGUMENTS — 以下のいずれか:
 - 記事ドラフトのファイルパス
-- 省略時: `articles/drafts/` の最新ドラフトを探す
+- 省略時: `articles/` の最新ドラフトを探す
 
 オプション:
 - `plan-only` — 画像配置計画とプロンプトのみ生成（画像生成は実行しない）
@@ -127,7 +127,7 @@ response = client.models.generate_content(
 ```
 
 2. 生成結果を保存:
-   - `articles/drafts/images/{slug}/img_01.png` ～
+   - `articles/images/{slug}/img_01.png` ～
 
 3. 生成結果をユーザーに提示し、修正が必要か確認
 
@@ -148,7 +148,7 @@ note投稿時は画像をアップロードして挿入する手順をユーザ�
 ## 出力ファイル
 
 ```
-articles/drafts/
+articles/
 ├── {NN}_{slug}.md              # 記事本体
 ├── images/{slug}/
 │   ├── img_01.png              # 生成画像

@@ -11,7 +11,7 @@ $ARGUMENTS — 記事テーマ、内容の要約、またはドラフトのフ�
 
 - `$ARGUMENTS` がファイルパスの場合: そのファイルを読み込み
 - テーマ・要約の場合: そのまま使用
-- `published/content-registry.json` を確認し、次の連番 #N を特定
+- `articles/content-registry.json` を確認し、次の連番 #N を特定
 
 ### 2. タイトル生成
 
