@@ -1,0 +1,19 @@
+{
+  "images": [
+    {
+      "output_path": "assets/thumbnails/11_ai-adoption-practice.png",
+      "size": "1280x670",
+      "method": "HTML/CSS rendering (headless Chrome)",
+      "template": "series-standard (パターンA: テキスト中心型)",
+      "category": "組織・人材論",
+      "colors": { "main": "#D97706 gradient", "accent": "#5C2E04 (dark brown)", "text": "#FFFFFF" },
+      "layout": {
+        "top_left": "■ BizDev公開日誌",
+        "main_line1": "AIツールは、作っただけでは (white)",
+        "main_line2": "使われない。 (dark brown, larger)",
+        "subtitle": "―― 現場定着の「4つの壁」",
+        "bottom_right": "#11 (white circled badge)"
+      }
+    }
+  ]
+}
