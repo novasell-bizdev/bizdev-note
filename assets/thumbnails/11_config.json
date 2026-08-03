@@ -3,16 +3,12 @@
     {
       "output_path": "assets/thumbnails/11_ai-adoption-practice.png",
       "size": "1280x670",
-      "method": "HTML/CSS rendering (headless Chrome)",
-      "template": "series-standard (パターンA: テキスト中心型)",
-      "category": "組織・人材論",
-      "colors": { "main": "#D97706 gradient", "accent": "#5C2E04 (dark brown)", "text": "#FFFFFF" },
+      "method": "templates/記事タイトル画像用.pptx の背景画像に、テンプレのテキスト配置（左下 #N + タイトル）を重ねて生成",
+      "template": "series-editorial (novasell / bizdev note)",
       "layout": {
-        "top_left": "■ BizDev公開日誌",
-        "main_line1": "AIツールは、作っただけでは (white)",
-        "main_line2": "使われない。 (dark brown, larger)",
-        "subtitle": "―― 現場定着の「4つの壁」",
-        "bottom_right": "#11 (white circled badge)"
+        "background": "テンプレ背景（novasell + 緑ライン + bizdev note + 等高線オーナメント）を1.91:1にクロップ",
+        "num": "#11 (46px, #2B2B2B, 左下)",
+        "title": "AIツールは、作っただけでは使われない ― 現場定着の4つの壁（34px, 2行, #2B2B2B）"
       }
     }
   ]
